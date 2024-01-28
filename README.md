@@ -237,7 +237,7 @@ Please cite this work if you refer to or use any part of this artifact for your 
 
 BibTex:
 
-    @article{NetLR,
+    @article{netlr,
         author = {Kim, Gyuyeong and Lee, Wonjun},
         title = {In-Network Leaderless Replication for Distributed Data Stores},
         year = {2022},
