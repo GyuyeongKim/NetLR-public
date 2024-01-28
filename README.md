@@ -1,5 +1,6 @@
 # Overview
 This is the artifact that is used to evaluate NetLR, as described in the paper "In-Network Leaderless Replication for Distributed Data Stores" in VLDB 2022.
+NetLR performs data replication in the programmable switch.
 
 # Contents
 
@@ -7,8 +8,9 @@ This repository contains the following code segments:
 
 1. Switch data plane code
 2. Switch control plane code
-   - Python2 version (controller_vldb_ver.py, VLDB'22 version with SDE9.2)
-   - Python3 version (controller_python3.py, as of 2024/01/28) // Please use this one with SDE9.7 now because python2 is deprecated
+   - Python2 version (controller_vldb_ver.py, VLDB'22 version with SDE 9.2)
+   - Python3 version (controller_python3.py, as of 2024/01/28) // Please use this one with SDE 9.7 now because python2 is deprecated
+- Client-server application codes are not public, since we are unable to make the code work in our latest testbed environments due to lots of deprecated features. We believe that people can write a simple client-server application at ease since our core mechanism is in the switch, not in the client/server application.
 
 # Contents
 
@@ -33,8 +35,8 @@ We also tested our artifact on:
 # Installation
 
 ## Switch-side
-1. Place `controller.py` and `netlr.p4` in the SDE directory.
-2. Configure cluster-related information in the `controller.py`. This includes IP and MAC addresses, and port-related information.
+1. Place `controller_vldb_ver.py`, `controller_python3.py` and `netlr.p4` in the SDE directory.
+2. Configure cluster-related information in the `controller_vldb_ver.py` or `controller_python3.py`. This includes IP addresses and port-related information.
      
 3. Compile `netlr.p4` using the P4 compiler (we used `p4build.sh` provided by Intel). You can compile it manually with the following commands.
    - `cmake ${SDE}/p4studio -DCMAKE_INSTALL_PREFIX=${SDE_INSTALL} -DCMAKE_MODULE_PATH=${SDE}/cmake -DP4_NAME=netlr -DP4_PATH=${SDE}/netlr.p4`
