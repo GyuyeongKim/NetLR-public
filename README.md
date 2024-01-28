@@ -7,8 +7,8 @@ This repository contains the following code segments:
 
 1. Switch data plane code
 2. Switch control plane code
-   - Python2 version (VLDB'22 version)
-   - Python3 version (as of 2024/01/28) // Please use this one with SDE9.7 now because python2 is deprecated
+   - Python2 version (controller_vldb_ver.py, VLDB'22 version with SDE9.2)
+   - Python3 version (controller_python3.py, as of 2024/01/28) // Please use this one with SDE9.7 now because python2 is deprecated
 
 # Contents
 
