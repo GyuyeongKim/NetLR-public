@@ -37,7 +37,7 @@ We also tested our artifact on:
 2. Configure cluster-related information in the `controller.py`. This includes IP and MAC addresses, and port-related information.
      
 3. Compile `netlr.p4` using the P4 compiler (we used `p4build.sh` provided by Intel). You can compile it manually with the following commands.
-   - `cmake ${SDE}/p4studio -DCMAKE_INSTALL_PREFIX=${SDE_INSTALL} -DCMAKE_MODULE_PATH=${SDE}/cmake -DP4_NAME=netclone -DP4_PATH=${SDE}/netlr.p4`
+   - `cmake ${SDE}/p4studio -DCMAKE_INSTALL_PREFIX=${SDE_INSTALL} -DCMAKE_MODULE_PATH=${SDE}/cmake -DP4_NAME=netlr -DP4_PATH=${SDE}/netlr.p4`
    - `make`
    - `make install`
    - `${SDE}` and `${SDE_INSTALL}` are path to the SDE. In our testbed, SDE = `/home/admin/bf-sde-9.7.0`  and SDE_INSTALL = `/home/admin/bf-sde-9.7.0/install`.
@@ -134,7 +134,7 @@ We also tested our artifact on:
 # Experiment workflow
 ## Switch-side
 1. Open three terminals for the switch control plane. We need them for 1) starting the switch program, 2) port configuration, 3) rule configuration by controller
-2. In terminal 1, run NetClone program using `run_switchd.sh -p netclone` in the SDE directory. `run_switch.sh` is included in the SDE by default.
+2. In terminal 1, run netlr program using `run_switchd.sh -p netlr` in the SDE directory. `run_switch.sh` is included in the SDE by default.
 - The output should be like...
 ```
 Using SDE /home/tofino/bf-sde-9.7.0
