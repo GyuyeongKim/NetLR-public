@@ -8,8 +8,8 @@ This repository contains the following code segments:
 
 1. Switch data plane code
 2. Switch control plane code
-   - Python2 version (controller_vldb_ver.py, VLDB'22 version with SDE 9.2)
-   - Python3 version (controller_python3.py, as of 2024/01/28) // Please use this one with SDE 9.7 now because python2 is deprecated
+   - Python2 version (controller_SDE9.2.0.py, VLDB'22 version with SDE 9.2.0)
+   - Python3 version (controller.py, as of 2024/01/28 with SDE 9.7.0) // Recommend to use this since python2 is deprecated.
 - Client-server application codes are not public, since we are unable to make the code work in our latest testbed environments due to lots of deprecated features. We believe that people can write a simple client-server application at ease since our core mechanism is in the switch, not in the client/server application.
 
 # Contents
@@ -24,19 +24,19 @@ Our artifact is tested on:
 
 **Switch:**
 - Ubuntu 20.04 LTS with Linux kernel 5.4.
-- python 2.7
+- Python 2.7
 - Intel P4 Studio SDE 9.2.0 and BSP 9.2.0. 
 
 We also tested our artifact on:
 - Ubuntu 20.04 LTS with Linux kernel 5.4.
-- python 3.8.10
+- Python 3.8.10
 - Intel P4 Studio SDE 9.7.0 and BSP 9.7.0.
   
 # Installation
 
 ## Switch-side
-1. Place `controller_vldb_ver.py`, `controller_python3.py` and `netlr.p4` in the SDE directory.
-2. Configure cluster-related information in the `controller_vldb_ver.py` or `controller_python3.py`. This includes IP addresses and port-related information.
+1. Place `controller.py` and `netlr.p4` in the SDE directory.
+2. Configure cluster-related information in the `controller.py`. This includes IP addresses and port-related information.
      
 3. Compile `netlr.p4` using the P4 compiler (we used `p4build.sh` provided by Intel). You can compile it manually with the following commands.
    - `cmake ${SDE}/p4studio -DCMAKE_INSTALL_PREFIX=${SDE_INSTALL} -DCMAKE_MODULE_PATH=${SDE}/cmake -DP4_NAME=netlr -DP4_PATH=${SDE}/netlr.p4`
@@ -210,7 +210,7 @@ bfshell>
 3. In terminal 2, configure ports manually or `run_bfshell.sh`. It is recommended to configure ports to 100Gbps.
  - After starting the switch program, run `./run_bfshell.sh` and type `ucli` and `pm`.
  - You can create ports like `port-add #/- 100G NONE` and `port-enb #/-`. It is recommended to turn off auto-negotiation using `an-set -/- 2`. This part requires knowledge of Intel Tofino-related stuff. You can find more information in the switch manual or on Intel websites.
-4. In terminal 3, run the controller using `python3 controller_python3.py` in the SDE directory for the minimal working example.
+4. In terminal 3, run the controller using `python3 controller.py` in the SDE directory for the minimal working example.
 - The output should be ...
 ```
 Subscribe attempt #1
