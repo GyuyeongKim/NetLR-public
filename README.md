@@ -43,92 +43,92 @@ We also tested our artifact on:
    - `${SDE}` and `${SDE_INSTALL}` are path to the SDE. In our testbed, SDE = `/home/admin/bf-sde-9.7.0`  and SDE_INSTALL = `/home/admin/bf-sde-9.7.0/install`.
    - If done well, you should see the following outputs
    ```
--- 
-P4_LANG: p4-16
-P4C: /home/tofino/bf-sde-9.7.0/install/bin/bf-p4c
-P4C-GEN_BRFT-CONF: /home/tofino/bf-sde-9.7.0/install/bin/p4c-gen-bfrt-conf
-P4C-MANIFEST-CONFIG: /home/tofino/bf-sde-9.7.0/install/bin/p4c-manifest-config
--- 
-P4_NAME: netlr
--- 
-P4_PATH: /home/tofino/bf-sde-9.7.0/netlr.p4
--- Configuring done
--- Generating done
--- Build files have been written to: /home/tofino/bf-sde-9.7.0
-[  0%] Built target bf-p4c
-[  0%] Built target driver
-[100%] Generating netlr/tofino/bf-rt.json
-/home/tofino/bf-sde-9.7.0/netlr.p4(186): [--Wwarn=unused] warning: Table update_lseq_table is not used; removing
-    table update_lseq_table{
-          ^^^^^^^^^^^^^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(313): [--Wwarn=unused] warning: Table get_valid_replica_table is not used; removing
-    table get_valid_replica_table{
-          ^^^^^^^^^^^^^^^^^^^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(177): [--Wwarn=unused] warning: update_lseq: unused instance
-    RegisterAction<bit<32>, _, bit<32>>(lseq) update_lseq = {
-                                              ^^^^^^^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(303): [--Wwarn=unused] warning: get_valid_replica: unused instance
-    RegisterAction<bit<8>, _, bit<8>>(num_valid_replica) get_valid_replica = {
-                                                         ^^^^^^^^^^^^^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(122): [--Wwarn=uninitialized_out_param] warning: out parameter 'ig_md' may be uninitialized when 'SwitchIngressParser' terminates
-        out metadata_t ig_md,
-                       ^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(119)
-parser SwitchIngressParser(
-       ^^^^^^^^^^^^^^^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(178): [--Wwarn=uninitialized_out_param] warning: out parameter 'return_value' may be uninitialized when 'apply' terminates
-        void apply(inout bit<32> reg_value, out bit<32> return_value) {
-                                                        ^^^^^^^^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(178)
-        void apply(inout bit<32> reg_value, out bit<32> return_value) {
-             ^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(244): [--Wwarn=uninitialized_out_param] warning: out parameter 'return_value' may be uninitialized when 'apply' terminates
-        void apply(inout bit<32> reg_value, out bit<32> return_value) {
-                                                        ^^^^^^^^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(244)
-        void apply(inout bit<32> reg_value, out bit<32> return_value) {
-             ^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(322): [--Wwarn=uninitialized_out_param] warning: out parameter 'return_value' may be uninitialized when 'apply' terminates
-        void apply(inout bit<8> reg_value, out bit<8> return_value) {
-                                                      ^^^^^^^^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(322)
-        void apply(inout bit<8> reg_value, out bit<8> return_value) {
-             ^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(342): [--Wwarn=uninitialized_out_param] warning: out parameter 'return_value' may be uninitialized when 'apply' terminates
-        void apply(inout bit<32> reg_value, out bit<32> return_value) {
-                                                        ^^^^^^^^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(342)
-        void apply(inout bit<32> reg_value, out bit<32> return_value) {
-             ^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(467): [--Wwarn=uninitialized_out_param] warning: out parameter 'return_value' may be uninitialized when 'apply' terminates
-        void apply(inout bit<32> reg_value, out bit<32> return_value) {
-                                                        ^^^^^^^^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(467)
-        void apply(inout bit<32> reg_value, out bit<32> return_value) {
-             ^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(487): [--Wwarn=uninitialized_out_param] warning: out parameter 'return_value' may be uninitialized when 'apply' terminates
-        void apply(inout bit<32> reg_value, out bit<32> return_value) {
-                                                        ^^^^^^^^^^^^
-/home/tofino/bf-sde-9.7.0/netlr.p4(487)
-        void apply(inout bit<32> reg_value, out bit<32> return_value) {
-             ^^^^^
-[100%] Built target netlr-tofino
-[100%] Built target netlr
-[  0%] Built target bf-p4c
-[  0%] Built target driver
-[100%] Built target netlr-tofino
-[100%] Built target netlr
-Install the project...
--- Install configuration: "RelWithDebInfo"
--- Up-to-date: /home/tofino/bf-sde-9.7.0/install/share/p4/targets/tofino
--- Installing: /home/tofino/bf-sde-9.7.0/install/share/p4/targets/tofino/netlr.conf
--- Up-to-date: /home/tofino/bf-sde-9.7.0/install/share/tofinopd/netlr
--- Up-to-date: /home/tofino/bf-sde-9.7.0/install/share/tofinopd/netlr/pipe
--- Installing: /home/tofino/bf-sde-9.7.0/install/share/tofinopd/netlr/pipe/tofino.bin
--- Installing: /home/tofino/bf-sde-9.7.0/install/share/tofinopd/netlr/pipe/context.json
--- Installing: /home/tofino/bf-sde-9.7.0/install/share/tofinopd/netlr/events.json
--- Installing: /home/tofino/bf-sde-9.7.0/install/share/tofinopd/netlr/source.json
--- Installing: /home/tofino/bf-sde-9.7.0/install/share/tofinopd/netlr/bf-rt.json
+   -- 
+   P4_LANG: p4-16
+   P4C: /home/tofino/bf-sde-9.7.0/install/bin/bf-p4c
+   P4C-GEN_BRFT-CONF: /home/tofino/bf-sde-9.7.0/install/bin/p4c-gen-bfrt-conf
+   P4C-MANIFEST-CONFIG: /home/tofino/bf-sde-9.7.0/install/bin/p4c-manifest-config
+   -- 
+   P4_NAME: netlr
+   -- 
+   P4_PATH: /home/tofino/bf-sde-9.7.0/netlr.p4
+   -- Configuring done
+   -- Generating done
+   -- Build files have been written to: /home/tofino/bf-sde-9.7.0
+   [  0%] Built target bf-p4c
+   [  0%] Built target driver
+   [100%] Generating netlr/tofino/bf-rt.json
+   /home/tofino/bf-sde-9.7.0/netlr.p4(186): [--Wwarn=unused] warning: Table update_lseq_table is not used; removing
+       table update_lseq_table{
+             ^^^^^^^^^^^^^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(313): [--Wwarn=unused] warning: Table get_valid_replica_table is not used; removing
+       table get_valid_replica_table{
+             ^^^^^^^^^^^^^^^^^^^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(177): [--Wwarn=unused] warning: update_lseq: unused instance
+       RegisterAction<bit<32>, _, bit<32>>(lseq) update_lseq = {
+                                                 ^^^^^^^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(303): [--Wwarn=unused] warning: get_valid_replica: unused instance
+       RegisterAction<bit<8>, _, bit<8>>(num_valid_replica) get_valid_replica = {
+                                                            ^^^^^^^^^^^^^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(122): [--Wwarn=uninitialized_out_param] warning: out parameter 'ig_md' may be uninitialized when 'SwitchIngressParser' terminates
+           out metadata_t ig_md,
+                          ^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(119)
+   parser SwitchIngressParser(
+          ^^^^^^^^^^^^^^^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(178): [--Wwarn=uninitialized_out_param] warning: out parameter 'return_value' may be uninitialized when 'apply' terminates
+           void apply(inout bit<32> reg_value, out bit<32> return_value) {
+                                                           ^^^^^^^^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(178)
+           void apply(inout bit<32> reg_value, out bit<32> return_value) {
+                ^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(244): [--Wwarn=uninitialized_out_param] warning: out parameter 'return_value' may be uninitialized when 'apply' terminates
+           void apply(inout bit<32> reg_value, out bit<32> return_value) {
+                                                           ^^^^^^^^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(244)
+           void apply(inout bit<32> reg_value, out bit<32> return_value) {
+                ^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(322): [--Wwarn=uninitialized_out_param] warning: out parameter 'return_value' may be uninitialized when 'apply' terminates
+           void apply(inout bit<8> reg_value, out bit<8> return_value) {
+                                                         ^^^^^^^^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(322)
+           void apply(inout bit<8> reg_value, out bit<8> return_value) {
+                ^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(342): [--Wwarn=uninitialized_out_param] warning: out parameter 'return_value' may be uninitialized when 'apply' terminates
+           void apply(inout bit<32> reg_value, out bit<32> return_value) {
+                                                           ^^^^^^^^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(342)
+           void apply(inout bit<32> reg_value, out bit<32> return_value) {
+                ^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(467): [--Wwarn=uninitialized_out_param] warning: out parameter 'return_value' may be uninitialized when 'apply' terminates
+           void apply(inout bit<32> reg_value, out bit<32> return_value) {
+                                                           ^^^^^^^^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(467)
+           void apply(inout bit<32> reg_value, out bit<32> return_value) {
+                ^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(487): [--Wwarn=uninitialized_out_param] warning: out parameter 'return_value' may be uninitialized when 'apply' terminates
+           void apply(inout bit<32> reg_value, out bit<32> return_value) {
+                                                           ^^^^^^^^^^^^
+   /home/tofino/bf-sde-9.7.0/netlr.p4(487)
+           void apply(inout bit<32> reg_value, out bit<32> return_value) {
+                ^^^^^
+   [100%] Built target netlr-tofino
+   [100%] Built target netlr
+   [  0%] Built target bf-p4c
+   [  0%] Built target driver
+   [100%] Built target netlr-tofino
+   [100%] Built target netlr
+   Install the project...
+   -- Install configuration: "RelWithDebInfo"
+   -- Up-to-date: /home/tofino/bf-sde-9.7.0/install/share/p4/targets/tofino
+   -- Installing: /home/tofino/bf-sde-9.7.0/install/share/p4/targets/tofino/netlr.conf
+   -- Up-to-date: /home/tofino/bf-sde-9.7.0/install/share/tofinopd/netlr
+   -- Up-to-date: /home/tofino/bf-sde-9.7.0/install/share/tofinopd/netlr/pipe
+   -- Installing: /home/tofino/bf-sde-9.7.0/install/share/tofinopd/netlr/pipe/tofino.bin
+   -- Installing: /home/tofino/bf-sde-9.7.0/install/share/tofinopd/netlr/pipe/context.json
+   -- Installing: /home/tofino/bf-sde-9.7.0/install/share/tofinopd/netlr/events.json
+   -- Installing: /home/tofino/bf-sde-9.7.0/install/share/tofinopd/netlr/source.json
+   -- Installing: /home/tofino/bf-sde-9.7.0/install/share/tofinopd/netlr/bf-rt.json
 
    ```
 # Experiment workflow
