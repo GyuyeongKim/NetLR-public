@@ -10,7 +10,7 @@ This repository contains the following code segments:
 2. Switch control plane code
    - Python2 version (controller_SDE9.2.0.py, VLDB'22 version with SDE 9.2.0)
    - Python3 version (controller.py, as of 2024/01/28 with SDE 9.7.0) // Recommend to use this since python2 is deprecated.
-- Client-server application codes are not public, since we are unable to make the code work in our latest testbed environments due to lots of deprecated features. We believe that people can write a simple client-server application at ease since our core mechanism is in the switch, not in the client/server application.
+- Client-server application codes are not public, since we are unable to make the code work in our latest testbed environments due to lots of deprecated features. We believe that people can write a simple client-server application at ease since our core mechanism is in the switch, not in the client/server application. The current codebase supports raw socket applications like AF_PACKET with RAW_SOCK and DPDK because the switch does not update the destination IP address and MAC address when propagating write requests to replicas. In the paper, we used pypacker library, which is based on RAW_SOCK.
 
 # Contents
 
